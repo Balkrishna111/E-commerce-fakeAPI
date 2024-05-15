@@ -36,19 +36,19 @@ const BasketItem = ({ details }) => {
 
   // console.log(cartProductsSubTotal);
   return (
-    <tr className='text-center center fs-6'>
+    <tr className='text-center center all-container'>
       <td>
         {" "}
         <img height={100} src={details.image} alt='Product img' />
       </td>
       <td className='text-center'>
-        <div className='d-flex flex-column text-center'>
-          {details.title}
-          <div className='mt-2 d-flex text-center align-items-center justify-content-center'>
-            <FaStar className='text-warning text-center' /> :{" "}
-            <div className='text-secondary'>
-              {details.rating.rate}/ {details.rating.count}
-            </div>
+        <div className='d-flex flex-column text-center details text-truncate'>
+          <p className=''>{details.title}</p>
+        </div>
+        <div className='mt-2 d-flex text-center align-items-center justify-content-center'>
+          <FaStar className='text-warning text-center' /> :{" "}
+          <div className='text-secondary'>
+            {details.rating.rate}/ {details.rating.count}
           </div>
         </div>
       </td>

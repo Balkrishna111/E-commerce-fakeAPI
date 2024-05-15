@@ -14,7 +14,7 @@ function BasketTable() {
       <Table striped>
         <thead>
           <tr className='text-center'>
-            <th>image</th>
+            <th>Image</th>
             <th>Product</th>
             <th>Price</th>
             <th>Product Count</th>

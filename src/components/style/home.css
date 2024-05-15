@@ -1,7 +1,7 @@
 .container {
   margin: 0.5rem auto;
   padding: 2rem;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

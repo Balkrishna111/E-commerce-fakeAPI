@@ -8,6 +8,8 @@ import NavigationBar from "../NavigationBar";
 import Image from "react-bootstrap/Image";
 import IndividualIntervalsExample from "../carousel/ProductCarousel";
 import DarkVariantExample from "../carousel/ProductCarousel";
+import ProductCarousel from "../carousel/ProductCarousel";
+import "./style.css";
 
 const DescriptionPage = (details) => {
   const location = useLocation();
@@ -44,15 +46,17 @@ const DescriptionPage = (details) => {
   return (
     <>
       <NavigationBar />
-      <div className='container border-0'>
-        <Card className='margin-0 bg-light'>
-          <Card.Header
-            style={{ height: "40vh" }}
-            className='card-header d-flex justify-content-center align-items-center'
-          >
-            {/* <Image style={{ width: "200px" }} src={product.image} rounded /> */}
-            {/* <DarkVariantExample style={{ width: "50%" }} details={product} /> */}
-          </Card.Header>
+      <div className='container bg-light border-0'>
+        <Card className='margin-0 bg-light border-0'>
+          <div className='card-header bg-light'>
+            <Card.Header
+              className='d-flex justify-content-center align-items-center'
+              style={{ height: "40vh" }}
+            >
+              <ProductCarousel details={product} />
+              {/* <Image style={{ width: "200px" }} src={product.image} rounded /> */}
+            </Card.Header>
+          </div>
           <Card.Body>
             <Card.Title>{product.title}</Card.Title>
             <Card.Text>${product.price}</Card.Text>

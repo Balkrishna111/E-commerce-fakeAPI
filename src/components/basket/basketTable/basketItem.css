@@ -5,3 +5,27 @@
 .del-btn:hover {
   color: rgb(255, 0, 0);
 }
+
+.details {
+  scroll-behavior: smooth;
+  text-overflow: ellipsis;
+}
+
+/* .text-width {
+  width: 300px;
+} */
+
+@media screen and (max-width: 428px) {
+  tr {
+    font-size: 0.5rem;
+  }
+  .details {
+    width: 80px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  tr {
+    font-size: 0.7rem;
+  }
+}
