@@ -1,0 +1,7 @@
+.del-btn {
+  color: rgb(250, 135, 135);
+  cursor: pointer;
+}
+.del-btn:hover {
+  color: rgb(255, 0, 0);
+}
