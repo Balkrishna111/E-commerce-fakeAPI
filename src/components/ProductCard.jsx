@@ -58,15 +58,6 @@ function ProductCard({ details }) {
           <p className='text-secondary mb-auto'>({details.rating.count})</p>
         </div>
       </Card.Body>
-      {/* <Button
-        style={{ margin: "2rem" }}
-        variant='primary'
-        onClick={() => {
-          handleAddToCart(details);
-        }}
-      >
-        See Details...
-      </Button> */}
 
       <Link to={`/details`} state={{ info: details }}>
         <Button

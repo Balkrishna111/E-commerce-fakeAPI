@@ -1,0 +1,6 @@
+.top-segment {
+  display: flex;
+  font-size: 0.8rem;
+  padding: 5px 20px;
+  justify-content: space-between;
+}

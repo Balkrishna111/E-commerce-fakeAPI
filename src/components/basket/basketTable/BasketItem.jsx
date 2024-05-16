@@ -39,11 +39,11 @@ const BasketItem = ({ details }) => {
     <tr className='text-center center all-container'>
       <td>
         {" "}
-        <img height={100} src={details.image} alt='Product img' />
+        <img height={100} width={100} src={details.image} alt='Product img' />
       </td>
-      <td className='text-center'>
-        <div className='d-flex flex-column text-center details text-truncate'>
-          <p className=''>{details.title}</p>
+      <td className='text-center '>
+        <div className='d-flex flex-column text-center details'>
+          <p>{details.title}</p>
         </div>
         <div className='mt-2 d-flex text-center align-items-center justify-content-center'>
           <FaStar className='text-warning text-center' /> :{" "}
