@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
     <footer className='bg-dark text-light text-center text-lg-start'>
-      <div className='container p-4'>
-        <div className='row'>
-          <div className='col-lg-6 col-md-12 mb-4 mb-md-0'>
+      <div className='p-4'>
+        <div className='row d-flex justify-content-around'>
+          <div className='col-lg-5 col-md-11 mb-4 mb-md-0'>
             <h5 className='text-uppercase'>Footer text</h5>
 
             <p>
@@ -12,7 +12,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className='col-lg-6 col-md-12 mb-4 mb-md-0'>
+          <div className='col-lg-5 col-md-11 mb-4 mb-md-0'>
             <h5 className='text-uppercase'>Footer text</h5>
 
             <p>Lorem ipsum dolor sit amet consectetur,</p>

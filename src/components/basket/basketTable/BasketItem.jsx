@@ -34,6 +34,13 @@ const BasketItem = ({ details }) => {
     updatePrice();
   }, [productCount]);
 
+  const addProductCount = () => {
+    setProductCount(productCount + 1);
+  };
+  const reduceProductCount = () => {
+    setProductCount(productCount - 1);
+  };
+
   // console.log(cartProductsSubTotal);
   return (
     <tr className='text-center center all-container'>
@@ -58,9 +65,7 @@ const BasketItem = ({ details }) => {
           <button
             className='bg-transparent'
             disabled={productCount == 1}
-            onClick={() => {
-              setProductCount(productCount - 1);
-            }}
+            onClick={reduceProductCount}
           >
             <FaMinus />
           </button>
@@ -77,13 +82,7 @@ const BasketItem = ({ details }) => {
       </td>
       <td>${subTotal.toFixed(2)}</td>
       <td>
-        <MdDelete
-          className='del-btn'
-          size={30}
-          onClick={() => {
-            handleDelete(details.id);
-          }}
-        />
+        <MdDelete className='del-btn' size={30} onClick={addProductCount} />
       </td>
     </tr>
   );

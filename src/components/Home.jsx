@@ -11,6 +11,7 @@ import TopAd from "../AdSegment/TopAd";
 import FlashSale from "./FlashSale/FlashSale";
 import Footer from "./Extras/Footer";
 import MiddleAd from "../AdSegment/MiddleAd";
+import BottomAd from "../AdSegment/BottomAd";
 
 const Home = () => {
   const URL = "https://fakestoreapi.com/products/";
@@ -47,6 +48,7 @@ const Home = () => {
           ))}
         </Container>
       )}
+      <BottomAd />
       <Footer />
     </div>
   );

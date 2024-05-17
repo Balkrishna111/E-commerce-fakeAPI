@@ -7,6 +7,7 @@ export const StoreContextProvider = ({ children }) => {
   const [cartProductsSubTotal, setCartProductsSubTotal] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
   const [filteredProduct, setFilteredProduct] = useState([]);
+  const [WishList, setWishList] = useState([]);
 
   return (
     <StoreContext.Provider
@@ -21,6 +22,8 @@ export const StoreContextProvider = ({ children }) => {
         setCartProductsSubTotal,
         filteredProduct,
         setFilteredProduct,
+        WishList,
+        setWishList,
       }}
     >
       {children}
