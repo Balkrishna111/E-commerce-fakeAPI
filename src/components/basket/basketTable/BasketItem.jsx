@@ -70,19 +70,20 @@ const BasketItem = ({ details }) => {
             <FaMinus />
           </button>
           {productCount}
-          <button
-            className='bg-transparent'
-            onClick={() => {
-              setProductCount(productCount + 1);
-            }}
-          >
+          <button className='bg-transparent' onClick={addProductCount}>
             <FaPlus />
           </button>
         </div>
       </td>
       <td>${subTotal.toFixed(2)}</td>
       <td>
-        <MdDelete className='del-btn' size={30} onClick={addProductCount} />
+        <MdDelete
+          className='del-btn'
+          size={30}
+          onClick={() => {
+            handleDelete(details.id);
+          }}
+        />
       </td>
     </tr>
   );

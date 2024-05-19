@@ -84,7 +84,7 @@ const RatingAndReviews = () => {
                 <div className='font-12 text-dark'>2 Star</div>
               </div>
               <div className='col-md-8 col-8 pr-2'>
-                <div className='progress' style={{ height: "8px;" }}>
+                <div className='progress' style={{ height: "8px" }}>
                   <div
                     className='progress-bar
                       bg-warning'

@@ -4,21 +4,25 @@ import Home from "./components/Home";
 import NavigationBar from "./components/NavigationBar";
 import WishListComonent from "./components/WishList/WishListComonent";
 import WishList from "./components/WishList/WishListComonent";
+import { ShippingContext } from "./context+reducer/ShippingContext";
 import { StoreContextProvider } from "./context+reducer/StoreContext";
+import { ShippingContextProvider } from "./context+reducer/ShippingContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
       <StoreContextProvider>
-        <Router>
-          <Routes>
-            <Route path='/' element={<Home />}></Route>
-            <Route path='/basket' element={<Basket />}></Route>
-            <Route path='/details' element={<DescriptionPage />}></Route>
-            <Route path='/wishList' element={<WishListComonent />}></Route>
-          </Routes>
-        </Router>
+        <ShippingContextProvider>
+          <Router>
+            <Routes>
+              <Route path='/' element={<Home />}></Route>
+              <Route path='/basket' element={<Basket />}></Route>
+              <Route path='/details' element={<DescriptionPage />}></Route>
+              <Route path='/wishList' element={<WishListComonent />}></Route>
+            </Routes>
+          </Router>
+        </ShippingContextProvider>
       </StoreContextProvider>
     </>
   );

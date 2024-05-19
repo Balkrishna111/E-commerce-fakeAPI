@@ -1,0 +1,10 @@
+.active-bar {
+  height: 4px;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .icon span {
+    display: none;
+  }
+}
