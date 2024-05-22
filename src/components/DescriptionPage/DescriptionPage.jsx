@@ -17,7 +17,6 @@ import RatingAndReviews from "./RatingAndReviews/RatingAndReviews";
 const DescriptionPage = (details) => {
   const location = useLocation();
   const product = location.state.info;
-  console.log(product);
   const {
     allProducts,
     setAllProducts,

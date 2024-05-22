@@ -1,3 +1,11 @@
 .details-btn {
   font-size: 2rem;
 }
+
+.wishlist-icon {
+  display: none;
+}
+
+.product-card:hover > .wishlist-icon {
+  display: block;
+}

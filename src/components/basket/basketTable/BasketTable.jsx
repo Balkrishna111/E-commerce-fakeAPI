@@ -44,6 +44,7 @@ function BasketTable() {
           </button>
 
           <button
+            disabled={!cartProducts.length}
             onClick={handleContinue}
             className=' btn btn-danger px-4 py-2 fw-bold'
           >

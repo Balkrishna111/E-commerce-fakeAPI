@@ -2,20 +2,17 @@ import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import { GoHome } from "react-icons/go";
+import { FaClipboardList } from "react-icons/fa";
 import { IoMdPower } from "react-icons/io";
-
 import "./style/navigationbar.css";
 import { StoreContext } from "../context+reducer/StoreContext";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import logo from "../assets/logo.png";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { FaClipboardList } from "react-icons/fa";
 import ModalPopup from "./User/logout-modal-launch/ModalPopup";
 import LoginModalPopup from "./User/login-modal-launch/LoginModalPopup";
 
@@ -30,10 +27,11 @@ export default function NavigationBar() {
     filteredProduct,
     setFilteredProduct,
     WishList,
+    loggedIn,
+    setLoggedIn,
   } = useContext(StoreContext);
 
   const [inputValue, setInputValue] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     setFilteredProduct(allProducts);
@@ -142,7 +140,9 @@ export default function NavigationBar() {
                 <span className='mx-2'>{cartProducts.length} Item(s)</span>
               </Button>
             </Link>
-            {!loggedIn && <LoginModalPopup setLoggedIn={setLoggedIn} />}
+            {!loggedIn && (
+              <LoginModalPopup setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
+            )}
             {loggedIn && (
               <div className='d-flex justify-content-center align-items-center gap-3'>
                 {/* <div className='user-img'>
@@ -153,7 +153,7 @@ export default function NavigationBar() {
                   />
                 </div>
                 <div className='user-name fw-bold'>Sandesh Gautam</div> */}
-                <div class='dropdown'>
+                <div className='dropdown'>
                   <div
                     data-mdb-button-init
                     data-mdb-ripple-init
@@ -175,12 +175,12 @@ export default function NavigationBar() {
                     </div>
                   </div>
                   <ul
-                    class='dropdown-menu'
+                    className='dropdown-menu'
                     aria-labelledby='dropdownMenuButton'
                   >
                     <Link to='/dashboard'>
                       <li>
-                        <a class='dropdown-item text-start' href='#'>
+                        <a className='dropdown-item text-start' href='#'>
                           <GoHome size={20} className='mr-2' />
                           Dashboard
                         </a>
@@ -188,14 +188,17 @@ export default function NavigationBar() {
                     </Link>
                     <Link to='/purchase-history'>
                       <li className='my-2'>
-                        <a class='dropdown-item text-start' href='#'>
+                        <a className='dropdown-item text-start' href='#'>
                           <FaClipboardList size={20} className='mr-2' />
                           Purchase History
                         </a>
                       </li>
                     </Link>
                     <li>
-                      <a class='dropdown-item text-danger text-start' href='#'>
+                      <a
+                        className='dropdown-item text-danger text-start'
+                        href='#'
+                      >
                         <IoMdPower size={20} className='mr-2' />
                         <ModalPopup setLoggedIn={setLoggedIn} />
                       </a>

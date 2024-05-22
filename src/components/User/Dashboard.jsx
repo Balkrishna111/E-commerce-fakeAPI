@@ -5,10 +5,26 @@ import { FiTarget } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
 import logo from "../../assets/logo.png";
-
+import { GoHome } from "react-icons/go";
+import { FaClipboardList } from "react-icons/fa";
+import { IoMdPower } from "react-icons/io";
+import { Link } from "react-router-dom";
 import "./dashboard.css";
+import { useContext } from "react";
+import { StoreContext } from "../../context+reducer/StoreContext";
+import ModalPopup from "./logout-modal-launch/ModalPopup";
+import LoginModalPopup from "./login-modal-launch/LoginModalPopup";
+import { RiLoginBoxLine } from "react-icons/ri";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { CiUser } from "react-icons/ci";
+import Form from "react-bootstrap/Form";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Dashboard = () => {
+  const { cartProducts, WishList, setLoggedIn, loggedIn } =
+    useContext(StoreContext);
   return (
     <>
       <TopSegment />
@@ -19,7 +35,7 @@ const Dashboard = () => {
       </div>
       <div className='container'>
         <div className='w-100 d-flex flex-wrap '>
-          <div className=' w-25'>
+          <div className='shadow p-3 mb-5 bg-body rounded w-25'>
             <div className='userInfo pt-4 '>
               <div className='userImg text-center'>
                 <img
@@ -33,17 +49,52 @@ const Dashboard = () => {
                 <p className='text-secondary mt-0'>1234-234-3456</p>
               </div>
             </div>
+            <div className='navigator fw-bold d-flex flex-column justify-content-between h-50'>
+              <ul style={{ listStyle: "none" }}>
+                <Link to='/dashboard'>
+                  <li className=' py-2 my-4 rounded'>
+                    <a className='text-dark' style={{ textDecoration: "none" }}>
+                      <GoHome size={30} className='mr-2' />
+                      Dashboard
+                    </a>
+                  </li>
+                </Link>
+                <Link to='/purchase-history'>
+                  <li className=' py-2 my-4 rounded'>
+                    <a className='text-dark' style={{ textDecoration: "none" }}>
+                      <FaClipboardList size={30} className='mr-2' />
+                      Purchase History
+                    </a>
+                  </li>
+                </Link>
+
+                {loggedIn && (
+                  <li
+                    className=' py-2 my-4 rounded'
+                    style={{ cursor: "pointer" }}
+                  >
+                    <a
+                      className='text-danger'
+                      style={{ textDecoration: "none" }}
+                    >
+                      <IoMdPower size={30} className='mr-2' />
+                      <ModalPopup setLoggedIn={setLoggedIn} />
+                    </a>
+                  </li>
+                )}
+              </ul>
+            </div>
           </div>
-          <div className=' w-50 pt-0'>
-            <div class='container mt-0'>
-              <div class='card bg-dark'>
-                <div class='visa_logo'>
+          <div className='shadow p-3 mb-5 bg-body rounded w-50 pt-0'>
+            <div className='container mt-0'>
+              <div className='card bg-dark'>
+                <div className='visa_logo'>
                   <img height={40} src={logo} alt='' />
                 </div>
                 <div className='name text-light fs-4 fw-bold ml-2 my-0'>
                   <p>Sandesh Gautam</p>
                 </div>
-                <div class='visa_info mt-0'>
+                <div className='visa_info mt-0'>
                   <p>Wallet Balance: $112.89</p>
                   <button className='btn btn-light'>Recharge Wallet</button>
                 </div>
@@ -52,12 +103,12 @@ const Dashboard = () => {
 
             <div className='container'>
               <div className='cartProductCount w-100'>
-                <div className='container   d-flex gap-4'>
+                <div className='container d-flex gap-4'>
                   <div className='cart-circle text-light bg-warning'>
                     <IoCartOutline size={30} />
                   </div>
                   <div className='box-data w-75 d-flex flex-column justify-content-center text-dark'>
-                    <p className='mb-0  fw-bold fs-4'>20</p>
+                    <p className='mb-0  fw-bold fs-4'>{cartProducts.length}</p>
                     <p className='mt-0 text-secondary'>Items in cart</p>
                   </div>
                 </div>
@@ -68,7 +119,7 @@ const Dashboard = () => {
                     <FaHeart size={30} />
                   </div>
                   <div className='box-data w-75 d-flex flex-column justify-content-center text-dark'>
-                    <p className='mb-0  fw-bold fs-4'>11</p>
+                    <p className='mb-0  fw-bold fs-4'>{WishList.length}</p>
                     <p className='mt-0 text-secondary'>Items in Wish List</p>
                   </div>
                 </div>
@@ -76,7 +127,7 @@ const Dashboard = () => {
               <div className='boughtProductCount'></div>
             </div>
           </div>
-          <div className=' w-25 p-4'>
+          <div className='shadow p-3 mb-5 bg-body rounded w-25 p-4'>
             <div className='container bg-danger d-flex gap-2'>
               <div className='dollar-circle'>$</div>
               <div className='box-data w-75 d-flex flex-column justify-content-center text-light'>
@@ -91,6 +142,35 @@ const Dashboard = () => {
               <div className='box-data w-75 d-flex flex-column justify-content-center text-light'>
                 <p className='mb-0'>Total Club Points</p>
                 <p className='mt-0 fw-bold'>10985</p>
+              </div>
+            </div>
+            <div className=''>
+              <div className='card w-100'>
+                <div className='card-header text-center'>
+                  <p className='fw-bold'>Default Address</p>
+                </div>
+                <ul className='list-group list-group-flush'>
+                  <li className='list-group-item'>
+                    <span className='fw-bold'>Postal Code:</span> 1234
+                  </li>
+                  <li className='list-group-item'>
+                    <span className='fw-bold'>City:</span> Pokhara
+                  </li>
+                  <li className='list-group-item'>
+                    <span className='fw-bold'>State:</span> Gandaki
+                  </li>
+                  <li className='list-group-item'>
+                    <span className='fw-bold'>Country:</span> Nepal
+                  </li>
+                  <li className='list-group-item'>
+                    <span className='fw-bold'>Phone:</span> 9811111111
+                  </li>
+                  <li className='list-group-item text-center my-2'>
+                    <button className='btn btn-dark'>
+                      + Add a new Address
+                    </button>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

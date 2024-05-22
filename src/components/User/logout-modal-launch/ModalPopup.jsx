@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
 
 function ModalPopup({ setLoggedIn, loggedIn }) {
   const [show, setShow] = useState(false);
@@ -11,6 +12,10 @@ function ModalPopup({ setLoggedIn, loggedIn }) {
   };
   const handleLogout = () => {
     setLoggedIn(false);
+  };
+
+  const handleShow = () => {
+    setShow(true);
   };
   return (
     <>
@@ -27,9 +32,11 @@ function ModalPopup({ setLoggedIn, loggedIn }) {
           <Button variant='secondary' onClick={handleClose}>
             Close
           </Button>
-          <Button variant='danger' onClick={handleLogout}>
-            Logout
-          </Button>
+          <Link to='/'>
+            <Button variant='danger' onClick={handleLogout}>
+              Logout
+            </Button>
+          </Link>
         </Modal.Footer>
       </Modal>
     </>

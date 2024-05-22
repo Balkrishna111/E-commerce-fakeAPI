@@ -9,6 +9,7 @@ export const StoreContextProvider = ({ children }) => {
   const [filteredProduct, setFilteredProduct] = useState([]);
   const [WishList, setWishList] = useState([]);
   const [purchaseHistory, setPurchaseHistory] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const categoriesArray = [];
   const categories = (arr) => {
@@ -51,6 +52,8 @@ export const StoreContextProvider = ({ children }) => {
         purchaseHistory,
         setPurchaseHistory,
         categoriesArray,
+        loggedIn,
+        setLoggedIn,
       }}
     >
       {children}
