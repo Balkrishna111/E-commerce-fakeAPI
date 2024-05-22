@@ -3,6 +3,7 @@ import { FiPlus } from "react-icons/fi";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useContext } from "react";
 import { ShippingContext } from "../context+reducer/ShippingContext";
+import { Link } from "react-router-dom";
 
 const ShippingAddress = () => {
   const { currentPhase, setCurrentPhase } = useContext(ShippingContext);
@@ -24,7 +25,7 @@ const ShippingAddress = () => {
               className='card-input-element'
             />
 
-            <div className='card card-default card-input'>
+            <div className='card w-100 card-default card-input'>
               <div className='card-header'>
                 3947 Lake Side Hallanchowk, Pokhara, Nepal
               </div>
@@ -66,7 +67,7 @@ const ShippingAddress = () => {
           <label>
             <input type='radio' name='product' className='card-input-element' />
 
-            <div className='card card-default card-input'>
+            <div className='card w-100 card-default card-input'>
               <div className='card-header'>
                 8364 Thadodhunga, Dhobighat, Lalitpur, Nepal
               </div>
@@ -113,10 +114,12 @@ const ShippingAddress = () => {
       </div>
       <div className='container'>
         <div className='w-100 button-container d-flex justify-content-between'>
-          <button className='btn btn-light d-flex justify-content-center align-items-center gap-1 text-danger px-4 py-2 fw-bold'>
-            <FaArrowLeft />
-            Return to Shop
-          </button>
+          <Link to='/' style={{ textDecoration: "none" }}>
+            <button className='btn btn-light d-flex justify-content-center align-items-center gap-1 text-danger px-4 py-2 fw-bold'>
+              <FaArrowLeft />
+              Return to Shop
+            </button>
+          </Link>
 
           <button
             onClick={handleContinue}

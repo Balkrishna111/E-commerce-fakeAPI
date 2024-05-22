@@ -3,6 +3,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { useContext } from "react";
 import { ShippingContext } from "../context+reducer/ShippingContext";
 import { StoreContext } from "../context+reducer/StoreContext";
+import { Link } from "react-router-dom";
 
 const DeliveryInfo = () => {
   const { currentPhase, setCurrentPhase } = useContext(ShippingContext);
@@ -10,9 +11,8 @@ const DeliveryInfo = () => {
   const handleContinue = () => {
     setCurrentPhase(currentPhase + 1);
   };
-  console.log(cartProducts);
   return (
-    <div className='container bcontent w-100'>
+    <div className='container bcontent w-100 border border-1'>
       <div>
         <h5>In-House Products</h5>
       </div>
@@ -37,11 +37,11 @@ const DeliveryInfo = () => {
         </div>
       ))}
 
-      <div className='container'>
+      <div className='container '>
         <div className='row w-100 d-flex justify-content-between align-items-center'>
-          <p className='col-2 text-center'>Choose Delivery Type:</p>
-          <div className='col-8 radio-container d-flex justify-content-end'>
-            <div className='col-5'>
+          <p className='col-2 text-center '>Choose Delivery Type:</p>
+          <div className='w-100 col-8 radio-container d-flex justify-content-between'>
+            <div className=''>
               <label>
                 <input
                   type='radio'
@@ -56,7 +56,7 @@ const DeliveryInfo = () => {
                 </div>
               </label>
             </div>
-            <div className='col-5'>
+            <div className=''>
               <label>
                 <input
                   type='radio'
@@ -74,10 +74,12 @@ const DeliveryInfo = () => {
       </div>
       <div className='container'>
         <div className='w-100 button-container d-flex justify-content-between'>
-          <button className='btn btn-light d-flex justify-content-center align-items-center gap-1 text-danger px-4 py-2 fw-bold'>
-            <FaArrowLeft />
-            Return to Shop
-          </button>
+          <Link to='/' style={{ textDecoration: "none" }}>
+            <button className='btn btn-light d-flex justify-content-center align-items-center gap-1 text-danger px-4 py-2 fw-bold'>
+              <FaArrowLeft />
+              Return to Shop
+            </button>
+          </Link>
 
           <button
             onClick={handleContinue}

@@ -1,24 +1,34 @@
-import Dropdown from "react-bootstrap/Dropdown";
+import { FaArrowDown } from "react-icons/fa";
 
-function DropDownMenu() {
+import { useContext } from "react";
+import { StoreContext } from "../../context+reducer/StoreContext";
+
+function DropDown() {
+  const { categoriesArray } = useContext(StoreContext);
   return (
-    <Dropdown>
-      <Dropdown.Toggle
-        style={{ fontSize: "0.8rem" }}
-        className='fw-bold'
-        variant='danger'
-        id='dropdown-basic'
+    <div className='dropdown open'>
+      <button
+        className='btn btn-danger '
+        type='button'
+        id='dropdownMenu5'
+        data-toggle='dropdown'
+        aria-haspopup='true'
+        aria-expanded='false'
       >
         Categories
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu className='fw-bold' style={{ fontSize: "0.8rem" }}>
-        <Dropdown.Item href='#/action-1'>Clothing</Dropdown.Item>
-        <Dropdown.Item href='#/action-2'>Accessories</Dropdown.Item>
-        <Dropdown.Item href='#/action-3'>Gadgets</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+        <FaArrowDown className='ml-2' size={12} />
+      </button>
+      <div className='dropdown-menu'>
+        <a key='All' className='dropdown-item' style={{ cursor: "pointer" }}>
+          All Items
+        </a>
+        {categoriesArray.map((item) => (
+          <a key={item} className='dropdown-item' style={{ cursor: "pointer" }}>
+            {item}
+          </a>
+        ))}
+      </div>
+    </div>
   );
 }
-
-export default DropDownMenu;
+export default DropDown;

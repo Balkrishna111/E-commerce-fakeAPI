@@ -6,6 +6,7 @@ const MiddleAd = () => {
           <img
             style={{ width: "100%" }}
             height={250}
+            className='object-fit-cover'
             src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdBrJnhzlS504lqvTbJHd-PPxFHUJilbkD5A&s'
             alt='bannerAd'
           />

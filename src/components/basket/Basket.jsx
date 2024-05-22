@@ -12,6 +12,7 @@ import ShippingAddress from "../../shipping/ShippingAddress";
 import DeliveryInfo from "../../shipping/DeliveryInfo";
 import Payment from "../../shipping/Payment";
 import Confirmation from "../../shipping/Confirmation";
+import CategoryBar from "../Extras/CategoryBar";
 
 const Basket = () => {
   // const { cartTotal, setCartTotal } = useContext(StoreContext);
@@ -21,6 +22,7 @@ const Basket = () => {
       <div>
         <TopSegment />
         <NavigationBar />
+        <CategoryBar />
         <div className='grand-total m-4 w-100'>
           {/* <h5>Grand Total: ${cartTotal}</h5> */}
         </div>

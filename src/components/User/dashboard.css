@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+
+/* Card */
+
+.card {
+  width: 500px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  z-index: 1;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: relative;
+}
+
+.visa_logo {
+  float: right;
+  padding-left: 5px;
+}
+
+.visa_logo img {
+  /* width: 70px; */
+  height: 100px;
+  margin-bottom: 0;
+}
+
+.visa_info {
+  padding: 10px;
+  /* margin-top: 10px; */
+}
+.visa_info img {
+  width: 60px;
+  height: 45px;
+}
+
+.visa_info p {
+  font-size: 22px;
+  padding: 10px 0;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.visa_crinfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  color: #ffffff;
+}
+
+.dollar-circle {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(218, 129, 129);
+  height: 40px;
+  border-radius: 100%;
+  width: 40px;
+}
+.points-circle {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(211, 211, 120);
+  height: 40px;
+  border-radius: 100%;
+  width: 40px;
+}
+
+.cart-circle {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  border-radius: 100%;
+  width: 100px;
+}
