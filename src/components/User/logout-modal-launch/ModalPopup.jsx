@@ -8,7 +8,6 @@ function ModalPopup({ setLoggedIn, loggedIn }) {
 
   const handleClose = () => {
     setShow(false);
-    setLoggedIn(false);
   };
   const handleLogout = () => {
     setLoggedIn(false);

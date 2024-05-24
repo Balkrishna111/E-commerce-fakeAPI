@@ -53,18 +53,18 @@ const Dashboard = () => {
               <ul style={{ listStyle: "none" }}>
                 <Link to='/dashboard'>
                   <li className=' py-2 my-4 rounded'>
-                    <a className='text-dark' style={{ textDecoration: "none" }}>
+                    <p className='text-dark' style={{ textDecoration: "none" }}>
                       <GoHome size={30} className='mr-2' />
                       Dashboard
-                    </a>
+                    </p>
                   </li>
                 </Link>
                 <Link to='/purchase-history'>
                   <li className=' py-2 my-4 rounded'>
-                    <a className='text-dark' style={{ textDecoration: "none" }}>
+                    <p className='text-dark' style={{ textDecoration: "none" }}>
                       <FaClipboardList size={30} className='mr-2' />
                       Purchase History
-                    </a>
+                    </p>
                   </li>
                 </Link>
 
@@ -73,13 +73,13 @@ const Dashboard = () => {
                     className=' py-2 my-4 rounded'
                     style={{ cursor: "pointer" }}
                   >
-                    <a
+                    <p
                       className='text-danger'
                       style={{ textDecoration: "none" }}
                     >
                       <IoMdPower size={30} className='mr-2' />
                       <ModalPopup setLoggedIn={setLoggedIn} />
-                    </a>
+                    </p>
                   </li>
                 )}
               </ul>

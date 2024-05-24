@@ -156,10 +156,6 @@ const Payment = () => {
                   <p>$0.00</p>
                 </td>
               </tr>
-              <div
-                className='w-100 bg-secondary mb-0'
-                style={{ height: "2px" }}
-              ></div>
               <tr>
                 <td className='w-75 text-start'>
                   <p>Grand Total</p>
